@@ -17,6 +17,9 @@
 const Route = use('Route')
 
 Route.post('/users','Usercontroller.create')
+Route.get('/users','Usercontroller.index').middleware('auth')
+
+
 Route.post('/sessions','SessionController.create')
 Route.resource('properties','PropertyController')
     .apiOnly()
